@@ -1,0 +1,393 @@
+[
+  {
+    part: 'Which answer comes closest to describing how you usually feel or act?',
+    questions: [
+      {
+        question: 'When you go somewhere for the day, would you rather',
+        options: [
+          'plan what you will do and when',
+          'just go',
+        ],
+      },
+      {
+        question: 'Do you consider yourself to be',
+        options: [
+          'more of a spontaneous person',
+          'more of an organized person',
+        ],
+      },
+      {
+        question: 'If you were a teacher, would you rather teach',
+        options: [
+          'fact courses',
+          'courses involving theory',
+        ],
+      },
+      {
+        question: 'Are you usually',
+        options: [
+          'a “good mixer”',
+          'rather quiet and reserved',
+        ],
+      },
+      {
+        question: 'Do you usually get along better with',
+        options: [
+          'imaginative people',
+          'realistic people',
+        ],
+      },
+      {
+        question: 'Do you more often let',
+        options: [
+          'your heart rule your head',
+          'your head rule your heart',
+        ],
+      },
+      {
+        question: 'Do you prefer to do many things',
+        options: [
+          'on the spur of the moment',
+          'according to your plans',
+        ],
+      },
+      {
+        question: 'Are you',
+        options: [
+          'easy to get to know',
+          'hard to get to know',
+        ],
+      },
+      {
+        question: 'Does following a schedule',
+        options: [
+          'appeal to you',
+          'cramp you',
+        ],
+      },  
+      {
+        question: ' When you have a special job to do, do you like to',
+        options: [
+          'organize it carefully before you start',
+          'find out what is necessary as you go along',
+        ],
+      },
+      {
+        question: 'In most instances, do you prefer to',
+        options: [
+          'go with the flow',
+          'follow a schedule',
+        ],
+      },
+      {
+        question: 'Would most people say you are',
+        options: [
+          'a private person',
+          'a very open person',
+        ],
+      },
+      {
+        question: 'Would you rather be considered',
+        options: [
+          'a practical person',
+          'an ingenious person',
+        ],
+      },
+      {
+        question: 'In a large group do you more often',
+        options: [
+          'introduce others',
+          'get introduced',
+        ],
+      },
+      {
+        question: 'Would you rather have as a friend with someone who',
+        options: [
+          'is always coming up with new ideas',
+          'has both feet on the ground',
+        ],
+      },
+      {
+        question: 'Are you inclined to',
+        options: [
+          'value sentiment more than logic',
+          'value logic more than sentiment',
+        ],
+      },
+      {
+        question: 'Do you prefer to',
+        options: [
+          'wait and see what happens and then make plans',
+          'plan things far in advance',
+        ],
+      },
+      {
+        question: 'Do you tend to spend a lot of time',
+        options: [
+          'by yourself',
+          'with others',
+        ],
+      },
+      {
+        question: 'Do you find being around a lot of people',
+        options: [
+          'gives you more energy',
+          'is often “draining”',
+        ],
+      },
+      {
+        question: 'Do you prefer to',
+        options: [
+          'arrange dates, parties, etc., well in advance',
+          'be free to do whatever looks like fun when the time comes',
+        ],
+      },
+      {
+        question: 'In planning a trip would you prefer to',
+        options: [
+          'most of the time do whatever you feel like that day',
+          'know ahead of time what you’ll be doing most days',
+        ],
+      },
+      {
+        question: 'At parties, do you',
+        options: [
+          'sometimes get bored',
+          'always have fun',
+        ],
+      },
+      {
+        question: 'Do you usually',
+        options: [
+          'mingle well with others',
+          'tend to keep more to yourself',
+        ],
+      },
+      {
+        question: 'Are you more attracted to',
+        options: [
+          'a person with a quick and brilliant mind',
+          'a practical person with a lot of common sense',
+        ],
+      },
+      {
+        question: 'In your daily work, do you',
+        options: [
+          'rather enjoy an emergency that makes you work against time',
+          'usually plan your work so you won’t need to work under pressure',
+        ],
+      },
+      {
+        question: 'Would you say it generally takes others',
+        options: [
+          'a long time to get to know you',
+          'a little time to get to know you',
+        ],
+      },
+    ]
+  },
+  {
+    part: 'Which word in each pair appeals to you more? Think about what the words
+mean, not about how they look or how they sound.',
+    pairs: [
+      ['private', 'open'],
+      ['scheduled', 'unplanned'],
+      ['abstract', 'solid'],
+      ['gentle', 'firm'],
+      ['thinking', 'feeling'],
+      ['facts', 'ideas'],
+      ['impulse', 'decision'],
+      ['hearty', 'quiet'],
+      ['quiet', 'outgoing'],
+      ['systematic', 'casual'],
+      ['theory', 'certainty'],
+      ['sensitive', 'just'],
+      ['convincing', 'touching'],
+      ['statement', 'concept'],
+      ['unconstrained', 'scheduled'],
+      ['reserved', 'talkative'],
+      ['orderly', 'easygoing'],
+      ['idea', 'actuality'],
+      ['compassion', 'foresight'],
+      ['benefits', 'blessings'],
+      ['no-nonsense', 'theoretical'],
+      ['few friends', 'lots of friends'],
+      ['systematic', 'spontaneous'],
+      ['imaginative', 'matter-of-fact'],
+      ['warm', 'objective'],
+      ['objective', 'passionate'],
+      ['build', 'invent'],
+      ['quiet', 'gregarious'],
+      ['theory', 'fact'],
+      ['compassionate', 'logical'],
+      ['analytical', 'sentimental'],
+      ['sensible', 'fascinating'],
+    ]
+  },
+  {
+    part: 'Which answer comes closest to describing how you usually feel or act?',
+    questions: [
+      {
+        question: 'When you start a big project that is due in a week, do you',
+        options: [
+          'take time to list the separate things to be done and the order of doing them',
+          'plunge right in',
+        ],
+      },
+      {
+        question: 'In social situations do you generally find it',
+        options: [
+          'difficult to start and maintain a conversation with some people',
+          'easy to talk to most people for long periods of time',
+        ],
+      },
+      {
+        question: 'In doing something that many other people do, does it appeal to you more to',
+        options: [
+          'do it in the accepted way',
+          'inventr a way of your own',
+        ],
+      },
+      {
+        question: 'Can the new people you meet tell what you are interested in',
+        options: [
+          'right away',
+          'only after they really get to know you',
+        ],
+      },
+      {
+        question: 'Do you generally prefer courses that teach',
+        options: [
+          'concepts and principles',
+          'facts and figures',
+        ],
+      },
+      {
+        question: 'Is it a higher compliment to be called',
+        options: [
+          'a person of real feeling',
+          'a consistently reasonable person',
+        ],
+      },
+      {
+        question: 'Do you find going by a schedule',
+        options: [
+          'necessary at times but generally unfavorable',
+          'helpful and favorable most of the time',
+        ],
+      },
+      {
+        question: 'When you are with a group of people, would you usually rather',
+        options: [
+          'talk individually with people you know well',
+          'join in the talk of the group',
+        ],
+      },
+      {
+        question: 'At parties do you',
+        options: [
+          'do much of the talking',
+          'let others do most of the talking',
+        ],
+      },
+      {
+        question: 'Does the idea of making a list of what you should get done over a weekend',
+        options: [
+          'appeal to you',
+          'leave you cold',
+        ],
+      },
+      {
+        question: 'Which is a higher compliment, to be called',
+        options: [
+          'competent',
+          'compassionate',
+        ],
+      },
+      {
+        question: 'Do you generally prefer to',
+        options: [
+          'make your social engagements some distance ahead',
+          'be free to do things on the spur of the moment',
+        ],
+      },
+      {
+        question: 'Overall, when working on a big assignment, do you tend to',
+        options: [
+          'figure out what needs to be done as you go along',
+          'begin by breaking it down into steps',
+        ],
+      },
+      {
+        question: 'Can you keep a conversation going indefinitely',
+        options: [
+          'only with people who share some interest of yours',
+          'with almost anyone',
+        ],
+      },
+      {
+        question: 'Would you rather',
+        options: [
+          'support the established methods of doing good',
+          'analyze what is still wrong and attack unsolved problems',
+        ]
+      },
+      {
+        question: 'In reading for pleasure, do you',
+        options: [
+          'enjoy odd or original ways of saying things',
+          'like writers to say exactly what they mean',
+        ],
+      },
+      {
+        question: 'Would you rather work under a boss (or teacher) who is',
+        options: [
+          'good-natured but often inconsistent',
+          'sharp-tongued but always logical',
+        ],
+      },
+      {
+        question: 'Would you prefer to do most things according to',
+        options: [
+          'however you feel that particular day',
+          'a set schedule',
+        ],
+      },
+      {
+        question: 'Can you',
+        options: [
+          'talk easily to almost anyone for as long as you have to',
+          'find a lot to say only to certain people or under certain conditions',
+        ],
+      },
+      {
+        question: 'When making a decision, is it more important to you to',
+        options: [
+          'weigh the facts',
+          "consider people's feelings and opinions",
+        ],
+      },
+    ],
+  },
+  {
+    part: 'Which word in each pair appeals to you more? Think about what the words
+mean, not about how they look or how they sound.',
+    pairs: [
+      ['imaginative', 'realistic'],
+      ['bighearted', 'firm-minded'],
+      ['fair-minded', 'caring'],
+      ['production', 'design'],
+      ['possibilities', 'certainties'],
+      ['tenderness', 'strength'],
+      ['practical', 'sentimental'],
+      ['make', 'create'],
+      ['novel', 'already known'],
+      ['sympathize', 'analyze'],
+      ['strong-willed', 'tenderhearted'],
+      ['concrete', 'abstract'],
+      ['devoted', 'determined'],
+      ['competent', 'kindhearted'],
+      ['practical', 'innovative'],
+    ],
+  },
+]
