@@ -1,4 +1,4 @@
-:root {
+#root {
   --max-width: min(60ch, 100svw);
   display: grid;
   place-items: center;
@@ -19,8 +19,11 @@ h1 {
   justify-content: center;
 
   & li {
-    padding: 0.25rem 0.5rem;
-    border: 2px solid currentColor;
+    & a {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border: 2px solid currentColor;
+    }
 
     &.known {
       background-color: currentColor;
@@ -40,6 +43,15 @@ h1 {
       )
     }
 
+    &.active {
+      background-color: currentColor;
+      color: color-mix(
+        in hsl shorter hue,
+        hsl(133 100% 75%),
+        currentColor
+      )
+    }
+
     &:hover {
       background-color: currentColor;
       color: color-mix(
@@ -51,7 +63,7 @@ h1 {
   }
 }
 
-#bits {
+#question {
   text-align: center;
   max-width: var(--max-width);
   overflow-x: clip;
