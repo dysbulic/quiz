@@ -187,8 +187,7 @@
     ]
   },
   {
-    part: 'Which word in each pair appeals to you more? Think about what the words
-mean, not about how they look or how they sound.',
+    part: 'Which word in each pair appeals to you more? Think about what the words mean, not about how they look or how they sound.',
     pairs: [
       ['private', 'open'],
       ['scheduled', 'unplanned'],
@@ -370,8 +369,7 @@ mean, not about how they look or how they sound.',
     ],
   },
   {
-    part: 'Which word in each pair appeals to you more? Think about what the words
-mean, not about how they look or how they sound.',
+    part: 'Which word in each pair appeals to you more? Think about what the words mean, not about how they look or how they sound.',
     pairs: [
       ['imaginative', 'realistic'],
       ['bighearted', 'firm-minded'],
