@@ -63,6 +63,14 @@ h1 {
   }
 }
 
+.chosen {
+  color: hsl(50, 75%, 45%);
+}
+
+.unchosen {
+  color: hsla(50, 75%, 45%, 0.5);
+}
+
 #question {
   text-align: center;
   max-width: var(--max-width);

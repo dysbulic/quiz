@@ -1,12 +1,13 @@
-import { ReactElement, useState } from 'react'
+import React, { useState } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { z } from 'zod'
 import { Tooltip } from 'react-tooltip'
 import { sequence, shuffle } from './utils'
 import form from './data/Form M.json5'
 import './App.css'
-import { renderToStaticMarkup } from 'react-dom/server'
 
 type Maybe<T> = T | null
+type Choice = Maybe<0 | 1>
 
 type Question = {
   question: string
@@ -81,7 +82,7 @@ const state2progress = (state?: Maybe<string>) => {
     console.error((err as Error).message)
   }
 
-  return null
+  return []
 }
 
 const progress2state = (
@@ -130,14 +131,27 @@ export function App() {
     ?? (sec as Pairs).pairs
   ))
   const choices = groups.flat()
+  let seq = sequence(choices.length)
   const seed = params.get('seed') ?? undefined
-  const seq = shuffle<number>(
-    sequence(choices.length), { seed },
-  )
+  if(seed) seq = shuffle<number>(seq, { seed })
   const state = params.get('state')
   const [progress, setProgress] = (
     useState(state2progress(state))
   )
+
+  const choose = (
+    { at, choice }:
+    { at: number, choice: Choice }
+  ) => {
+    console.log({ in: { at, choice } })
+    setProgress((prev) => {
+      return [
+        ...prev.slice(0, at),
+        choice,
+        ...prev.slice(at + 1),
+      ]
+    })
+  }
 
   const getChoice = (
     { idx, choice }:
@@ -163,7 +177,9 @@ export function App() {
                     {entry.options[choice]}
                   </span>
                   {' or '}
-                  {entry.options[(choice + 1) % 2]}
+                  <span className="unchosen">
+                    {entry.options[(choice + 1) % 2]}
+                  </span>
                   {'?'}
                 </p>
               )
@@ -178,7 +194,9 @@ export function App() {
                     {entry[choice]}
                   </span>
                   {' or '}
-                  {entry[(choice + 1) % 2]}
+                  <span className="unchosen">
+                    {entry[(choice + 1) % 2]}
+                  </span>
                   {'?'}
                 </>
               )
@@ -241,7 +259,7 @@ export function App() {
               <li
                 key={idx}
                 className={classes.join(' ')}
-                data-tooltip-id="app-tooltip"
+                data-tooltip-id="tooltip"
                 data-tooltip-html={
                   renderToStaticMarkup(q)
                 }
@@ -255,16 +273,48 @@ export function App() {
         )}
       </ol>
 
-      <section id="question">
+      <section id="prompt">
         {(() => {
+          const selection = seq[currentIndex]
           const { entry } = getChoice(
             {
-              idx: currentIndex,
-              choice: progress?.[currentIndex],
+              idx: selection,
+              choice: progress?.[selection],
             }
           )
           if(entry.question) {
-            return entry.question
+            return (
+              <form className="question">
+                <p>{entry.question}</p>
+                <ul className="options">
+                  {entry.options.map(
+                    (option: string, idx: number) => (
+                      <React.Fragment key={idx}>
+                        <li>
+                          <label>
+                            <input
+                              type="radio"
+                              name={`options-${selection}`}
+                              onClick={() => {
+                                console.log({ idx, currentIndex })
+                                choose({
+                                  at: currentIndex,
+                                  choice: idx as Choice,
+                                })
+                              }}
+                            />
+                            {option}
+                          </label>
+                        </li>
+                        {idx < entry.options.length - 1 && (
+                          <li className="or">or</li>
+                        )}
+                      </React.Fragment>
+                    )
+                  )}
+                </ul>
+              </form>
+            )
           } else if(Array.isArray(entry)) {
             return entry.join(' or ')
           } else {
@@ -272,7 +322,7 @@ export function App() {
           }
         })()}
       </section>
-      <Tooltip id="app-tooltip"/>
+      <Tooltip id="tooltip"/>
     </main>
   )
 }
