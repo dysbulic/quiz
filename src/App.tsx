@@ -53,7 +53,7 @@ const state2progress = (state?: Maybe<string>) => {
 
   try {
     let bits: Maybe<Array<string>> = Array.from(
-      atob(state)
+      atob(state.padEnd(Math.ceil(state.length / 4) * 4, '='))
       .split('')
       .map((char) => char.charCodeAt(0))
       .map((byte) => (
@@ -89,6 +89,8 @@ const progress2state = (
   (progress?: Maybe<Array<Maybe<number>>>) => {
     if(progress == null) return null
 
+    console.log({ progress })
+
     try {
       const bits = progress.map((field) => {
         switch(field) {
@@ -97,16 +99,17 @@ const progress2state = (
           default: return '00'
         }
       })
+      const string = bits.join('')
       const state = (
-        bits
-        .join('')
+        string
+        .padEnd(Math.ceil(string.length / 8) * 8, '0')
         .match(/.{1,8}/g)
         ?.map((byte) => (
           String.fromCharCode(parseInt(byte, 2))
         ))
         .join('')
       ) as string
-      const out = btoa(state)
+      const out = btoa(state ?? '').replace(/=/g, '')
 
       return out || null
     } catch(err) {
@@ -143,12 +146,22 @@ export function App() {
     { at, choice }:
     { at: number, choice: Choice }
   ) => {
-    console.log({ in: { at, choice } })
     setProgress((prev) => {
+      let out = prev
+      if(out.length < at) {
+        out = [
+          ...out,
+          ...Array.from(
+            { length: at - out.length },
+            () => null,
+          )
+        ]
+      }
+      console.log({ in: { at, choice, out } })
       return [
-        ...prev.slice(0, at),
+        ...out.slice(0, at),
         choice,
-        ...prev.slice(at + 1),
+        ...out.slice(at + 1),
       ]
     })
   }
@@ -216,6 +229,22 @@ export function App() {
   const currentIndex = Math.min(
     choices.length - 1, qIndex ?? progress?.length ?? 0
   )
+  const link = (index: number) => {
+    const linkParams: URLParams = {
+      index: String(index),
+    }
+    Object.entries(
+      { state: progress2state(progress), seed }
+    ).map(([key, value]) => {
+      if(value) {
+        linkParams[key as keyof URLParams] = (
+          value
+        )
+      }
+    })
+    const query = new URLSearchParams(linkParams)
+    return `?${query.toString()}`
+  }
 
   return (
     <main>
@@ -234,20 +263,6 @@ export function App() {
               { idx: selection, choice }
             )
 
-            const linkParams: URLParams = {
-              index: String(idx + 1),
-            }
-            Object.entries(
-              { state: progress2state(progress), seed }
-            ).map(([key, value]) => {
-              if(value) {
-                linkParams[key as keyof URLParams] = (
-                  value
-                )
-              }
-            })
-            const query = new URLSearchParams(linkParams)
-
             const classes = (
               [`${!known ? 'un' : ''}known`]
             )
@@ -264,7 +279,7 @@ export function App() {
                   renderToStaticMarkup(q)
                 }
               >
-                <a href={`?${query.toString()}`}>
+                <a href={`${link(idx + 1)}`}>
                   {idx + 1}
                 </a>
               </li>
@@ -276,51 +291,45 @@ export function App() {
       <section id="prompt">
         {(() => {
           const selection = seq[currentIndex]
+          const chosen = progress?.[selection]
           const { entry } = getChoice(
-            {
-              idx: selection,
-              choice: progress?.[selection],
-            }
+            { idx: selection, choice: chosen }
           )
-          if(entry.question) {
-            return (
-              <form className="question">
-                <p>{entry.question}</p>
-                <ul className="options">
-                  {entry.options.map(
-                    (option: string, idx: number) => (
-                      <React.Fragment key={idx}>
-                        <li>
-                          <label>
-                            <input
-                              type="radio"
-                              name={`options-${selection}`}
-                              onClick={() => {
-                                console.log({ idx, currentIndex })
-                                choose({
-                                  at: currentIndex,
-                                  choice: idx as Choice,
-                                })
-                              }}
-                            />
-                            {option}
-                          </label>
-                        </li>
-                        {idx < entry.options.length - 1 && (
-                          <li className="or">or</li>
-                        )}
-                      </React.Fragment>
-                    )
-                  )}
-                </ul>
-              </form>
-            )
-          } else if(Array.isArray(entry)) {
-            return entry.join(' or ')
-          } else {
-            return 'Unknown type of entry.'
-          }
+          const options = entry.options ?? entry
+          return (
+            <form className="question">
+              {entry.question && <p>{entry.question}</p>}
+              <ol className="options">
+                {options.map(
+                  (option: string, idx: number) => (
+                    <React.Fragment key={idx}>
+                      <li>
+                        <label>
+                          <input
+                            type="radio"
+                            name={`options-${selection}`}
+                            defaultChecked={chosen === idx}
+                            onClick={() => {
+                              choose({
+                                at: currentIndex,
+                                choice: idx as Choice,
+                              })
+                            }}
+                          />
+                          {option}
+                        </label>
+                      </li>
+                      {idx < options.length - 1 && (
+                        <li className="or">or</li>
+                      )}
+                    </React.Fragment>
+                  )
+                )}
+              </ol>
+            </form>
+          )
         })()}
+        <a href={link(currentIndex + 2)}>Next →</a>
       </section>
       <Tooltip id="tooltip"/>
     </main>
