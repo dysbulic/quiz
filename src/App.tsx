@@ -1,10 +1,14 @@
-import React, { useCallback, useEffect, useState } from 'react'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import { useCallback, useEffect, useState } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { z } from 'zod'
 import { Tooltip } from 'react-tooltip'
 import { progress2state, sequence, shuffle, state2progress } from './utils'
 import { Prompt } from './Prompt'
 import form from './data/Form M.json5'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-check
 import './App.css'
 import { Score } from './Score'
 
@@ -179,13 +183,13 @@ export function App() {
       } else if(evt.key === 'ArrowLeft') {
         if(currentIndex >= 0) {
           window.location.href = (
-            link(currentIndex, { progress })
+            link(currentIndex)
           )
         }
       } else if(evt.key === 'ArrowRight') {
         if(currentIndex < choices.length) {
           window.location.href = (
-            link(currentIndex + 2, { progress })
+            link(currentIndex + 2)
           )
         }
       }

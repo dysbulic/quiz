@@ -4,7 +4,7 @@
   place-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
-  container-type: size;
+  /* container-type: normal; */
   width: 100%;
 }
 
@@ -139,7 +139,7 @@ h1 {
 }
 
 #legend {
-  max-width: 60cqw;
+  max-width: 60%;
   margin: 0 auto;
   border: 2px dotted currentColor;
   padding: 0.5rem;
