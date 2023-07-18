@@ -1,124 +1,66 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { z } from 'zod'
 import { Tooltip } from 'react-tooltip'
-import { sequence, shuffle } from './utils'
+import { progress2state, sequence, shuffle, state2progress } from './utils'
+import { Prompt } from './Prompt'
 import form from './data/Form M.json5'
 import './App.css'
+import { Score } from './Score'
 
-type Maybe<T> = T | null
-type Choice = Maybe<0 | 1>
+export type Maybe<T> = T | null
+export type Choice = Maybe<0 | 1>
 
-type Question = {
+export type Question = {
+  axis: string
   question: string
   options: Array<string>
 }
-type Questions = {
+export type Questions = {
   part: string
   questions: Array<Question>
 }
-const QuestionsSchema = z.object({
+export const QuestionsSchema = z.object({
   part: z.string(),
   questions: z.array(z.object({
+    axis: z.string(),
     question: z.string(),
     options: z.array(z.string()).length(2),
   }))
 })
 
-type Pair = Array<string>
-type Pairs = {
+export type Pair = {
+  axis: string
+  options: Array<string>
+}
+export type Pairs = {
   part: string
   pairs: Array<Pair>
 }
-const PairsSchema = z.object({
+export const PairsSchema = z.object({
   part: z.string(),
-  pairs: z.array(z.array(z.string()).length(2)),
+  pairs: z.array(z.object({
+    axis: z.string(),
+    options: z.array(z.string()).length(2)
+  })),
 })
 
-const ConfigSchema = (
+export const ConfigSchema = (
   z.array(z.union([
     QuestionsSchema,
     PairsSchema,
   ]))
 )
 
-type URLParams = {
+export type URLParams = {
   index?: string
   state?: string
   seed?: string
 }
 
-const state2progress = (state?: Maybe<string>) => {
-  if(state == null) return []
-
-  try {
-    let bits: Maybe<Array<string>> = Array.from(
-      atob(state.padEnd(Math.ceil(state.length / 4) * 4, '='))
-      .split('')
-      .map((char) => char.charCodeAt(0))
-      .map((byte) => (
-        byte.toString(2).padStart(8, '0')
-      ))
-      .join('')
-      .match(/../g)
-      ?? []
-    )
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    while(bits.length > 0 && bits.at(-1) === '00') {
-      bits.pop()
-    }
-    if(bits.length === 0) {
-      bits = []
-    }
-
-    return bits.map((field) => {
-      switch(field) {
-        case '01': return 0
-        case '10': return 1
-        default: return null
-      }
-    })
-  } catch(err) {
-    console.error((err as Error).message)
-  }
-
-  return []
-}
-
-const progress2state = (
-  (progress?: Maybe<Array<Maybe<number>>>) => {
-    if(progress == null) return null
-
-    console.log({ progress })
-
-    try {
-      const bits = progress.map((field) => {
-        switch(field) {
-          case 0: return '01'
-          case 1: return '10'
-          default: return '00'
-        }
-      })
-      const string = bits.join('')
-      const state = (
-        string
-        .padEnd(Math.ceil(string.length / 8) * 8, '0')
-        .match(/.{1,8}/g)
-        ?.map((byte) => (
-          String.fromCharCode(parseInt(byte, 2))
-        ))
-        .join('')
-      ) as string
-      const out = btoa(state ?? '').replace(/=/g, '')
-
-      return out || null
-    } catch(err) {
-      console.error((err as Error).message)
-    }
-
-    return null
-  }
-)
+export type LinkParams = {
+  progress?: Maybe<Array<Maybe<number>>>
+} | undefined
 
 export function App() {
   const params = (
@@ -133,108 +75,86 @@ export function App() {
     (sec as Questions).questions
     ?? (sec as Pairs).pairs
   ))
-  const choices = groups.flat()
-  let seq = sequence(choices.length)
+  const origOrder = groups.flat()
+  let seq = sequence(origOrder.length)
   const seed = params.get('seed') ?? undefined
   if(seed) seq = shuffle<number>(seq, { seed })
+  const choices = seq.map((idx) => origOrder[idx])
   const state = params.get('state')
   const [progress, setProgress] = (
     useState(state2progress(state))
   )
 
-  const choose = (
+  const choose = useCallback((
     { at, choice }:
     { at: number, choice: Choice }
   ) => {
-    setProgress((prev) => {
-      let out = prev
-      if(out.length < at) {
-        out = [
-          ...out,
-          ...Array.from(
-            { length: at - out.length },
-            () => null,
-          )
-        ]
-      }
-      console.log({ in: { at, choice, out } })
-      return [
-        ...out.slice(0, at),
-        choice,
-        ...out.slice(at + 1),
+    let out = progress ?? []
+    if(out.length < at) {
+      out = [
+        ...out,
+        ...Array.from(
+          { length: at - out.length },
+          () => null,
+        )
       ]
-    })
-  }
-
-  const getChoice = (
-    { idx, choice }:
-    { idx: number, choice?: Maybe<number> }
-  ) => {
-    if(idx >= choices.length) {
-      throw new Error('Out of bounds.')
     }
+    out = [
+      ...out.slice(0, at),
+      choice,
+      ...out.slice(at + 1),
+    ]
+    setProgress(out)
+    return out
+  }, [progress])
 
-    const entry = choices[idx]
+  const format = (
+    { choice, chose }:
+    { choice: Question | Pair, chose?: Choice }
+  ) => {
     const question = (
       <section>
         {(() => {
-          if(entry.question) {
-            if(choice == null) {
-              return `${entry.question} ${entry.options.join(' or ')}?`
-            } else {
-              return (
-                <p>
-                  {entry.question}
-                  {' '}
-                  <span className="chosen">
-                    {entry.options[choice]}
-                  </span>
-                  {' or '}
-                  <span className="unchosen">
-                    {entry.options[(choice + 1) % 2]}
-                  </span>
-                  {'?'}
-                </p>
-              )
-            }
-          } else if(Array.isArray(entry)) {
-            if(choice == null) {
-              return `${entry.join(' or ')}?`
-            } else {
-              return (
-                <>
-                  <span className="chosen">
-                    {entry[choice]}
-                  </span>
-                  {' or '}
-                  <span className="unchosen">
-                    {entry[(choice + 1) % 2]}
-                  </span>
-                  {'?'}
-                </>
-              )
-            }
+          let out = ''
+          if((choice as Question).question) {
+            out = `${(choice as Question).question} `
+          }
+          if(chose == null) {
+            return out += `${choice.options.join(' or ')}?`
           } else {
             return (
-              `Unknown type of entry: "${
-                JSON.stringify(entry, null, 2)
-              }".`
+              <p>
+                {out}
+                <span className="chosen">
+                  {choice.options[chose]}
+                </span>
+                {' or '}
+                <span className="unchosen">
+                  {choice.options[(chose + 1) % 2]}
+                </span>
+                {'?'}
+              </p>
             )
           }
         })()}
       </section>
     )
-    return { question, entry }
+    return question
   }
-  const currentIndex = Math.min(
+  const [currentIndex] = useState(Math.min(
     choices.length - 1, qIndex ?? progress?.length ?? 0
-  )
-  const link = (index: number) => {
-    const linkParams: URLParams = {
-      index: String(index),
-    }
+  ))
+  const link = useCallback((
+    index: number | string,
+    { progress: argProgress }: LinkParams = {}
+  ) => {
+    const linkParams: URLParams = {}
     Object.entries(
-      { state: progress2state(progress), seed }
+      {
+        index: index != null ? String(index) : null,
+        state: progress2state(argProgress ?? progress),
+        seed,
+      }
     ).map(([key, value]) => {
       if(value) {
         linkParams[key as keyof URLParams] = (
@@ -244,7 +164,37 @@ export function App() {
     })
     const query = new URLSearchParams(linkParams)
     return `?${query.toString()}`
-  }
+  }, [progress, seed])
+
+  useEffect(() => {
+    const key = (evt: KeyboardEvent) => {
+      if(evt.key === '1' || evt.key === '2') {
+        const choice = (Number(evt.key) - 1) as Choice
+        const progress = (
+          choose({ at: currentIndex, choice })
+        )
+        window.location.href = (
+          link(currentIndex + 2, { progress })
+        )
+      } else if(evt.key === 'ArrowLeft') {
+        if(currentIndex >= 0) {
+          window.location.href = (
+            link(currentIndex, { progress })
+          )
+        }
+      } else if(evt.key === 'ArrowRight') {
+        if(currentIndex < choices.length) {
+          window.location.href = (
+            link(currentIndex + 2, { progress })
+          )
+        }
+      }
+    }
+    document.addEventListener('keyup', key)
+    return () => {
+      document.removeEventListener('keyup', key)
+    }
+  }, [choices.length, choose, currentIndex, link, progress])
 
   return (
     <main>
@@ -253,14 +203,13 @@ export function App() {
       <ol id="progress">
         {choices.map(
           (_entry: Pair | Question, idx: number) => {
-            if(idx >= seq.length) return null
+            if(idx >= choices.length) return null
 
-            const selection = seq[idx]
             const choice = progress?.[idx]
             const known = choice != null
 
-            const { question: q } = getChoice(
-              { idx: selection, choice }
+            const q = format(
+              { choice: choices[idx], chose: choice }
             )
 
             const classes = (
@@ -288,49 +237,16 @@ export function App() {
         )}
       </ol>
 
-      <section id="prompt">
-        {(() => {
-          const selection = seq[currentIndex]
-          const chosen = progress?.[selection]
-          const { entry } = getChoice(
-            { idx: selection, choice: chosen }
-          )
-          const options = entry.options ?? entry
-          return (
-            <form className="question">
-              {entry.question && <p>{entry.question}</p>}
-              <ol className="options">
-                {options.map(
-                  (option: string, idx: number) => (
-                    <React.Fragment key={idx}>
-                      <li>
-                        <label>
-                          <input
-                            type="radio"
-                            name={`options-${selection}`}
-                            defaultChecked={chosen === idx}
-                            onClick={() => {
-                              choose({
-                                at: currentIndex,
-                                choice: idx as Choice,
-                              })
-                            }}
-                          />
-                          {option}
-                        </label>
-                      </li>
-                      {idx < options.length - 1 && (
-                        <li className="or">or</li>
-                      )}
-                    </React.Fragment>
-                  )
-                )}
-              </ol>
-            </form>
-          )
-        })()}
-        <a href={link(currentIndex + 2)}>Next →</a>
-      </section>
+      {qIndexString === 'score' ? (
+        <Score {...{ choices, progress }}/>
+      ) : (
+        <Prompt
+          index={currentIndex}
+          chosen={progress?.[currentIndex]}
+          {...{ choices, link, choose }}
+        />
+      )}
+
       <Tooltip id="tooltip"/>
     </main>
   )

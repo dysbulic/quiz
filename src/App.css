@@ -26,7 +26,7 @@ h1 {
     }
 
     &.known {
-      background-color: currentColor;
+      background-color: purple;
       color: color-mix(
         in hsl shorter hue,
         hsl(200 100% 75%),
@@ -87,10 +87,48 @@ h1 {
   border-radius: 10%;
 }
 
-#prompt ol {
-  list-style: none;
+#prompt {
+  & ol {
+    list-style: none;
 
-  & .or {
-    margin-inline-start: 2rem;
+    & li {
+      &:nth-of-type(1):before {
+        content: '(1) ';
+      }
+
+      &:nth-of-type(3):before {
+        content: '(2) ';
+      }
+    }
+
+    & .or {
+      margin-inline-start: 2rem;
+    }
+  }
+
+  & a {
+    border: 2px solid currentColor;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    display: block;
+    text-align: right;
+
+    &:hover {
+      color: black;
+      background-color: hsl(90, 100%, 75%);
+    }
+  }
+}
+
+#score ul {
+  display: grid;
+  grid-template-columns: max-content 1fr 1fr;
+
+  & li {
+    display: contents;
+
+    & span {
+      padding-inline: 1rem;
+    }
   }
 }

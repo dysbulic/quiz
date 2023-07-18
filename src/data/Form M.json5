@@ -3,6 +3,7 @@
     part: 'Which answer comes closest to describing how you usually feel or act?',
     questions: [
       {
+        axis: 'J/P',
         question: 'When you go somewhere for the day, would you rather',
         options: [
           'plan what you will do and when',
@@ -10,6 +11,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'Do you consider yourself to be',
         options: [
           'more of a spontaneous person',
@@ -17,6 +19,7 @@
         ],
       },
       {
+        axis: 'S/N',
         question: 'If you were a teacher, would you rather teach',
         options: [
           'fact courses',
@@ -24,6 +27,7 @@
         ],
       },
       {
+        axis: 'E/I',
         question: 'Are you usually',
         options: [
           'a “good mixer”',
@@ -31,6 +35,7 @@
         ],
       },
       {
+        axis: 'N/S',
         question: 'Do you usually get along better with',
         options: [
           'imaginative people',
@@ -38,6 +43,7 @@
         ],
       },
       {
+        axis: 'F/T',
         question: 'Do you more often let',
         options: [
           'your heart rule your head',
@@ -45,6 +51,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'Do you prefer to do many things',
         options: [
           'on the spur of the moment',
@@ -52,6 +59,7 @@
         ],
       },
       {
+        axis: 'E/I',
         question: 'Are you',
         options: [
           'easy to get to know',
@@ -59,6 +67,7 @@
         ],
       },
       {
+        axis: 'J/P',
         question: 'Does following a schedule',
         options: [
           'appeal to you',
@@ -66,6 +75,7 @@
         ],
       },  
       {
+        axis: 'J/P',
         question: ' When you have a special job to do, do you like to',
         options: [
           'organize it carefully before you start',
@@ -73,6 +83,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'In most instances, do you prefer to',
         options: [
           'go with the flow',
@@ -80,6 +91,7 @@
         ],
       },
       {
+        axis: 'I/E',
         question: 'Would most people say you are',
         options: [
           'a private person',
@@ -87,6 +99,7 @@
         ],
       },
       {
+        axis: 'S/N',
         question: 'Would you rather be considered',
         options: [
           'a practical person',
@@ -94,6 +107,7 @@
         ],
       },
       {
+        axis: 'E/I',
         question: 'In a large group do you more often',
         options: [
           'introduce others',
@@ -101,6 +115,7 @@
         ],
       },
       {
+        axis: 'N/S',
         question: 'Would you rather have as a friend with someone who',
         options: [
           'is always coming up with new ideas',
@@ -108,6 +123,7 @@
         ],
       },
       {
+        axis: 'F/T',
         question: 'Are you inclined to',
         options: [
           'value sentiment more than logic',
@@ -115,6 +131,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'Do you prefer to',
         options: [
           'wait and see what happens and then make plans',
@@ -122,6 +139,7 @@
         ],
       },
       {
+        axis: 'I/E',
         question: 'Do you tend to spend a lot of time',
         options: [
           'by yourself',
@@ -129,6 +147,7 @@
         ],
       },
       {
+        axis: 'E/I',
         question: 'Do you find being around a lot of people',
         options: [
           'gives you more energy',
@@ -136,6 +155,7 @@
         ],
       },
       {
+        axis: 'J/P',
         question: 'Do you prefer to',
         options: [
           'arrange dates, parties, etc., well in advance',
@@ -143,6 +163,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'In planning a trip would you prefer to',
         options: [
           'most of the time do whatever you feel like that day',
@@ -150,6 +171,7 @@
         ],
       },
       {
+        axis: 'I/E',
         question: 'At parties, do you',
         options: [
           'sometimes get bored',
@@ -157,6 +179,7 @@
         ],
       },
       {
+        axis: 'E/I',
         question: 'Do you usually',
         options: [
           'mingle well with others',
@@ -164,6 +187,7 @@
         ],
       },
       {
+        axis: 'N/S',
         question: 'Are you more attracted to',
         options: [
           'a person with a quick and brilliant mind',
@@ -171,6 +195,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'In your daily work, do you',
         options: [
           'rather enjoy an emergency that makes you work against time',
@@ -178,6 +203,7 @@
         ],
       },
       {
+        axis: 'I/E',
         question: 'Would you say it generally takes others',
         options: [
           'a long time to get to know you',
@@ -189,44 +215,141 @@
   {
     part: 'Which word in each pair appeals to you more? Think about what the words mean, not about how they look or how they sound.',
     pairs: [
-      ['private', 'open'],
-      ['scheduled', 'unplanned'],
-      ['abstract', 'solid'],
-      ['gentle', 'firm'],
-      ['thinking', 'feeling'],
-      ['facts', 'ideas'],
-      ['impulse', 'decision'],
-      ['hearty', 'quiet'],
-      ['quiet', 'outgoing'],
-      ['systematic', 'casual'],
-      ['theory', 'certainty'],
-      ['sensitive', 'just'],
-      ['convincing', 'touching'],
-      ['statement', 'concept'],
-      ['unconstrained', 'scheduled'],
-      ['reserved', 'talkative'],
-      ['orderly', 'easygoing'],
-      ['idea', 'actuality'],
-      ['compassion', 'foresight'],
-      ['benefits', 'blessings'],
-      ['no-nonsense', 'theoretical'],
-      ['few friends', 'lots of friends'],
-      ['systematic', 'spontaneous'],
-      ['imaginative', 'matter-of-fact'],
-      ['warm', 'objective'],
-      ['objective', 'passionate'],
-      ['build', 'invent'],
-      ['quiet', 'gregarious'],
-      ['theory', 'fact'],
-      ['compassionate', 'logical'],
-      ['analytical', 'sentimental'],
-      ['sensible', 'fascinating'],
+      {
+        axis: 'I/E',
+        options: ['private', 'open'],
+      },
+      {
+        axis: 'J/P',
+        options: ['scheduled', 'unplanned'],
+      },
+      {
+        axis: 'N/S',
+        options: ['abstract', 'solid'],
+      },
+      {
+        axis: 'F/T',
+        options: ['gentle', 'firm'],
+      },
+      {
+        axis: 'T/F',
+        options: ['thinking', 'feeling'],
+      },
+      {
+        axis: 'S/N',
+        options: ['facts', 'ideas'],
+      },
+      {
+        axis: 'P/J',
+        options: ['impulse', 'decision'],
+      },
+      {
+        axis: 'I/E',
+        options: ['hearty', 'quiet'],
+      },
+      {
+        axis: 'I/E',
+        options: ['quiet', 'outgoing'],
+      },
+      {
+        axis: 'J/P',
+        options: ['systematic', 'casual'],
+      },
+      {
+        axis: 'N/S',
+        options: ['theory', 'certainty'],
+      },
+      {
+        axis: 'F/T',
+        options: ['sensitive', 'just'],
+      },
+      {
+        axis: 'T/F',
+        options: ['convincing', 'touching'],
+      },
+      {
+        axis: 'S/N',
+        options: ['statement', 'concept'],
+      },
+      {
+        axis: 'P/J',
+        options: ['unconstrained', 'scheduled'],
+      },
+      {
+        axis: 'I/E',
+        options: ['reserved', 'talkative'],
+      },
+      {
+        axis: 'J/P',
+        options: ['orderly', 'easygoing'],
+      },
+      {
+        axis: 'N/S',
+        options: ['idea', 'actuality'],
+      },
+      {
+        axis: 'F/T',
+        options: ['compassion', 'foresight'],
+      },
+      {
+        axis: 'T/F',
+        options: ['benefits', 'blessings'],
+      },
+      {
+        axis: 'S/N',
+        options: ['no-nonsense', 'theoretical'],
+      },
+      {
+        axis: 'I/E',
+        options: ['few friends', 'lots of friends'],
+      },
+      {
+        axis: 'J/P',
+        options: ['systematic', 'spontaneous'],
+      },
+      {
+        axis: 'N/S',
+        options: ['imaginative', 'matter-of-fact'],
+      },
+      {
+        axis: 'F/T',
+        options: ['warm', 'objective'],
+      },
+      {
+        axis: 'T/F',
+        options: ['objective', 'passionate'],
+      },
+      {
+        axis: 'S/N',
+        options: ['build', 'invent'],
+      },
+      {
+        axis: 'I/E',
+        options: ['quiet', 'gregarious'],
+      },
+      {
+        axis: 'N/S',
+        options: ['theory', 'fact'],
+      },
+      {
+        axis: 'F/T',
+        options: ['compassionate', 'logical'],
+      },
+      {
+        axis: 'T/F',
+        options: ['analytical', 'sentimental'],
+      },
+      {
+        axis: 'S/N',
+        options: ['sensible', 'fascinating'],
+      },
     ]
   },
   {
     part: 'Which answer comes closest to describing how you usually feel or act?',
     questions: [
       {
+        axis: 'J/P',
         question: 'When you start a big project that is due in a week, do you',
         options: [
           'take time to list the separate things to be done and the order of doing them',
@@ -234,6 +357,7 @@
         ],
       },
       {
+        axis: 'I/E',
         question: 'In social situations do you generally find it',
         options: [
           'difficult to start and maintain a conversation with some people',
@@ -241,13 +365,15 @@
         ],
       },
       {
+        axis: 'S/N',
         question: 'In doing something that many other people do, does it appeal to you more to',
         options: [
           'do it in the accepted way',
-          'inventr a way of your own',
+          'invent a way of your own',
         ],
       },
       {
+        axis: 'E/I',
         question: 'Can the new people you meet tell what you are interested in',
         options: [
           'right away',
@@ -255,6 +381,7 @@
         ],
       },
       {
+        axis: 'N/S',
         question: 'Do you generally prefer courses that teach',
         options: [
           'concepts and principles',
@@ -262,6 +389,7 @@
         ],
       },
       {
+        axis: 'F/T',
         question: 'Is it a higher compliment to be called',
         options: [
           'a person of real feeling',
@@ -269,6 +397,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'Do you find going by a schedule',
         options: [
           'necessary at times but generally unfavorable',
@@ -276,6 +405,7 @@
         ],
       },
       {
+        axis: 'I/E',
         question: 'When you are with a group of people, would you usually rather',
         options: [
           'talk individually with people you know well',
@@ -283,6 +413,7 @@
         ],
       },
       {
+        axis: 'E/I',
         question: 'At parties do you',
         options: [
           'do much of the talking',
@@ -290,6 +421,7 @@
         ],
       },
       {
+        axis: 'J/P',
         question: 'Does the idea of making a list of what you should get done over a weekend',
         options: [
           'appeal to you',
@@ -297,6 +429,7 @@
         ],
       },
       {
+        axis: 'T/F',
         question: 'Which is a higher compliment, to be called',
         options: [
           'competent',
@@ -304,6 +437,7 @@
         ],
       },
       {
+        axis: 'J/P',
         question: 'Do you generally prefer to',
         options: [
           'make your social engagements some distance ahead',
@@ -311,6 +445,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'Overall, when working on a big assignment, do you tend to',
         options: [
           'figure out what needs to be done as you go along',
@@ -318,6 +453,7 @@
         ],
       },
       {
+        axis: 'I/E',
         question: 'Can you keep a conversation going indefinitely',
         options: [
           'only with people who share some interest of yours',
@@ -325,6 +461,7 @@
         ],
       },
       {
+        axis: 'S/N',
         question: 'Would you rather',
         options: [
           'support the established methods of doing good',
@@ -332,6 +469,7 @@
         ]
       },
       {
+        axis: 'N/S',
         question: 'In reading for pleasure, do you',
         options: [
           'enjoy odd or original ways of saying things',
@@ -339,6 +477,7 @@
         ],
       },
       {
+        axis: 'F/T',
         question: 'Would you rather work under a boss (or teacher) who is',
         options: [
           'good-natured but often inconsistent',
@@ -346,6 +485,7 @@
         ],
       },
       {
+        axis: 'P/J',
         question: 'Would you prefer to do most things according to',
         options: [
           'however you feel that particular day',
@@ -353,6 +493,7 @@
         ],
       },
       {
+        axis: 'E/I',
         question: 'Can you',
         options: [
           'talk easily to almost anyone for as long as you have to',
@@ -360,6 +501,7 @@
         ],
       },
       {
+        axis: 'T/F',
         question: 'When making a decision, is it more important to you to',
         options: [
           'weigh the facts',
@@ -371,21 +513,66 @@
   {
     part: 'Which word in each pair appeals to you more? Think about what the words mean, not about how they look or how they sound.',
     pairs: [
-      ['imaginative', 'realistic'],
-      ['bighearted', 'firm-minded'],
-      ['fair-minded', 'caring'],
-      ['production', 'design'],
-      ['possibilities', 'certainties'],
-      ['tenderness', 'strength'],
-      ['practical', 'sentimental'],
-      ['make', 'create'],
-      ['novel', 'already known'],
-      ['sympathize', 'analyze'],
-      ['strong-willed', 'tenderhearted'],
-      ['concrete', 'abstract'],
-      ['devoted', 'determined'],
-      ['competent', 'kindhearted'],
-      ['practical', 'innovative'],
+      {
+        axis: 'N/S',
+        options: ['imaginative', 'realistic'],
+      },
+      {
+        axis: 'F/T',
+        options: ['bighearted', 'firm-minded'],
+      },
+      {
+        axis: 'T/F',
+        options: ['fair-minded', 'caring'],
+      },
+      {
+        axis: 'S/N',
+        options: ['production', 'design'],
+      },
+      {
+        axis: 'N/S',
+        options: ['possibilities', 'certainties'],
+      },
+      {
+        axis: 'F/T',
+        options: ['tenderness', 'strength'],
+      },
+      {
+        axis: 'T/F',
+        options: ['practical', 'sentimental'],
+      },
+      {
+        axis: 'S/N',
+        options: ['make', 'create'],
+      },
+      {
+        axis: 'N/S',
+        options: ['novel', 'already known'],
+      },
+      {
+        axis: 'F/T',
+        options: ['sympathize', 'analyze'],
+      },
+      {
+        axis: 'T/F',
+        options: ['strong-willed', 'tenderhearted'],
+      },
+      {
+        axis: 'S/N',
+        options: ['concrete', 'abstract'],
+      },
+      {
+        axis: 'F/T',
+        options: ['devoted', 'determined'],
+      },
+      {
+        axis: 'T/F',
+        options: ['competent', 'kindhearted'],
+      },
+      {
+        axis: 'S/N',
+        options: ['practical', 'innovative'],
+      },
     ],
   },
 ]
