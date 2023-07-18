@@ -9,7 +9,9 @@
     "build": "tsc && vite build",
     "build:unsafe": "vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "car": "cd dist/ && ipfs-car pack --output ../site.car ./",
+    "upload": "w3 put-car site.car"
   },
   "dependencies": {
     "@floating-ui/react": "^0.24.6",

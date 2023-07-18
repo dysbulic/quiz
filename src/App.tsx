@@ -247,6 +247,13 @@ export function App() {
         />
       )}
 
+      <section id="legend">
+        <p>Click on any of the numbered boxes to select that question.</p>
+        <p>Use the left and right arrow keys to navigate between questions.</p>
+        <p>Use the 1 and 2 keys to select the first or second option.</p>
+        <p>Use the up and down keys to select an option, and enter to progress.</p>
+      </section>
+
       <Tooltip id="tooltip"/>
     </main>
   )

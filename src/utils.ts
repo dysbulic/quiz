@@ -1,12 +1,17 @@
 import { MersenneTwister } from 'fast-mersenne-twister'
-import { Maybe } from './App'
+import { Maybe } from './App';
 
 export function shuffle<T = unknown>(
   arr: Array<T>,
-  { seed = crypto.randomUUID() as string },
+  { seed }: { seed: Maybe<string> } = { seed: null }
 ) {
+  if(seed == null) {
+    seed = crypto.getRandomValues(
+      new Uint32Array(1)
+    ).toString()
+  }
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const { random } = new MersenneTwister(seed) as {
+  const { random } = new MersenneTwister(Number(seed)) as {
     random: () => number
   }
   let currIdx = arr.length, randIdx

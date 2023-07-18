@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FormEvent } from "react"
 import { Choice, Pair, Question } from "./App"
 
 export const Prompt = (
@@ -15,9 +15,16 @@ export const Prompt = (
 ) => {
   const entry = choices[index]
   const options = entry.options ?? entry
+  const last = index >= choices.length - 1
+  const onSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault()
+    const next = last ? 'score' : index + 2
+    location.href = link(next)
+  }
+
   return (
     <section id="prompt">
-      <form className="question">
+      <form className="question" {...{ onSubmit }}>
         {(entry as Question).question && (
           <p>{(entry as Question).question}</p>
         )}
@@ -28,6 +35,7 @@ export const Prompt = (
                 <li>
                   <label>
                     <input
+                      autoFocus={idx === 0}
                       type="radio"
                       name={`options-${index}`}
                       defaultChecked={chosen === idx}
@@ -49,12 +57,8 @@ export const Prompt = (
             )
           )}
         </ol>
+        <button>{last ? 'Score' : 'Next'} →</button>
       </form>
-      {index < choices.length - 1 ? (
-        <a href={link(index + 2)}>Next →</a>
-      ) : (
-        <a href={link('score')}>Score →</a>
-      )}
     </section>
   )
 }
