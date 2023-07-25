@@ -5,286 +5,286 @@
   },
   {
     prompt: 'I feel disoriented by so much change in my life.',
-    archetype: '',
+    archetype: 'Destroyer',
   },
   {
     prompt: 'The process of my own self-healing enables me to help heal others.',
-    archetype: '',
+    archetype: 'Magician',
   },
   {
     prompt: 'I have let others down.',
-    archetype: '',
+    archetype: 'Destroyer',
   },
   {
     prompt: 'I feel safe.',
-    archetype: '',
+    archetype: 'Innocent',
   },
   {
     prompt: 'I put fear aside and do what needs to be done.',
-    archetype: '',
+    archetype: 'Warrior',
   },
   {
     prompt: 'I put the needs of others before my own.',
-    archetype: '',
+    archetype: 'Caregiver',
   },
   {
     prompt: 'I try to be authentic wherever I am.',
-    archetype: '',
+    archetype: 'Creator',
   },
   {
     prompt: 'When life gets dull, I like to shake things up.',
-    archetype: '',
+    archetype: 'Fool',
   },
   {
     prompt: 'I find satisfaction caring for others.',
-    archetype: '',
+    archetype: 'Caregiver',
   },
   {
     prompt: 'Others see me as fun.',
-    archetype: '',
+    archetype: 'Fool',
   },
   {
     prompt: 'I feel sexy.',
-    archetype: '',
+    archetype: 'Lover',
   },
   {
     prompt: 'I believe that people don’t really mean to hurt each other.',
-    archetype: '',
+    archetype: 'Innocent',
   },
   {
     prompt: 'As a child, I was neglected or victimized.',
-    archetype: '',
+    archetype: 'Orphan',
   },
   {
     prompt: 'Giving makes me happier than receiving.',
-    archetype: '',
+    archetype: 'Caregiver',
   },
   {
     prompt: 'I agree with the statement, “It is better to have loved and lost than never to have loved at all.”',
-    archetype: '',
+    archetype: 'Lover',
   },
   {
     prompt: 'I embrace life fully.',
-    archetype: '',
+    archetype: 'Lover',
   },
   {
     prompt: 'I keep a sense of perspective by taking a long-range view.',
-    archetype: '',
+    archetype: 'Sage',
   },
   {
     prompt: 'I am in the process of creating my own life.',
-    archetype: '',
+    archetype: 'Creator',
   },
   {
     prompt: 'I believe there are many good ways to look at the same thing.',
-    archetype: '',
+    archetype: 'Sage',
   },
   {
     prompt: 'I am no longer the person I thought I was.',
-    archetype: '',
+    archetype: 'Destroyer',
   },
   {
     prompt: 'Life is one heartache after another.',
-    archetype: '',
+    archetype: 'Orphan',
   },
   {
     prompt: 'Spiritual help accounts for my effectiveness.',
-    archetype: '',
+    archetype: 'Magician',
   },
   {
     prompt: 'I find it easier to do for others than to do for myself.',
-    archetype: '',
+    archetype: 'Caregiver',
   },
   {
     prompt: 'I find fulfillment through relationships.',
-    archetype: '',
+    archetype: 'Lover',
   },
   {
     prompt: 'People look to me for direction.',
-    archetype: '',
+    archetype: 'Ruler',
   },
   {
     prompt: 'I fear those in authority.',
-    archetype: '',
+    archetype: 'Orphan',
   },
   {
     prompt: 'I don’t take rules too seriously.',
-    archetype: '',
+    archetype: 'Fool',
   },
   {
     prompt: 'I like to help people connect with one another.',
-    archetype: '',
+    archetype: 'Lover',
   },
   {
     prompt: 'I feel abandoned.',
-    archetype: '',
+    archetype: 'Orphan',
   },
   {
     prompt: 'I have times of high accomplishment that feel effortless to me.',
-    archetype: '',
+    archetype: 'Creator',
   },
   {
     prompt: 'I have leadership qualities.',
-    archetype: '',
+    archetype: 'Ruler',
   },
   {
     prompt: 'I am searching for ways to improve myself.',
-    archetype: '',
+    archetype: 'Seeker',
   },
   {
     prompt: 'I can count on others to take care of me.',
-    archetype: '',
+    archetype: 'Innocent',
   },
   {
     prompt: 'I prefer to be in charge.',
-    archetype: '',
+    archetype: 'Ruler',
   },
   {
     prompt: 'I try to find truths behind illusions.',
-    archetype: '',
+    archetype: 'Sage',
   },
   {
     prompt: 'Changing my inner thoughts changes my outer life.',
-    archetype: '',
+    archetype: 'Magician',
   },
   {
     prompt: 'I develop resources, human or natural.',
-    archetype: '',
+    archetype: 'Ruler',
   },
   {
     prompt: 'I am willing to take personal risks in order to defend my beliefs.',
-    archetype: '',
+    archetype: 'Warrior',
   },
   {
     prompt: 'I can’t sit back and let a wrong go by without challenging it.',
-    archetype: '',
+    archetype: 'Warrior',
   },
   {
     prompt: 'I strive for objectivity.',
-    archetype: '',
+    archetype: 'Sage',
   },
   {
     prompt: 'My presence is often a catalyst for change.',
-    archetype: '',
+    archetype: 'Magician',
   },
   {
     prompt: 'I enjoy making people laugh.',
-    archetype: '',
+    archetype: 'Fool',
   },
   {
     prompt: 'I use discipline to achieve goals.',
-    archetype: '',
+    archetype: 'Warrior',
   },
   {
     prompt: 'I feel loving toward people in general.',
-    archetype: '',
+    archetype: 'Lover',
   },
   {
     prompt: 'I am good at matching people’s abilities with tasks to be done.',
-    archetype: '',
+    archetype: 'Ruler',
   },
   {
     prompt: 'It is essential for me to maintain my independence.',
-    archetype: '',
+    archetype: 'Seeker',
   },
   {
     prompt: 'I believe everyone and everything in the world are interconnected.',
-    archetype: '',
+    archetype: 'Magician',
   },
   {
     prompt: 'The world is a safe place.',
-    archetype: '',
+    archetype: 'Innocent',
   },
   {
     prompt: 'People I’ve trusted have abandoned me.',
-    archetype: '',
+    archetype: 'Orphan',
   },
   {
     prompt: 'I feel restless.',
-    archetype: '',
+    archetype: 'Seeker',
   },
   {
     prompt: 'I am letting go of things that do not fit for me anymore.',
-    archetype: '',
+    archetype: 'Destroyer',
   },
   {
     prompt: 'I like to “lighten up” people who are too serious.',
-    archetype: '',
+    archetype: 'Fool',
   },
   {
     prompt: 'A little chaos is good for the soul.',
-    archetype: '',
+    archetype: 'Fool',
   },
   {
     prompt: 'Sacrificing to help others has made me a better person.',
-    archetype: '',
+    archetype: 'Caregiver',
   },
   {
     prompt: 'I am calm.',
-    archetype: '',
+    archetype: 'Sage',
   },
   {
     prompt: 'I stand up to offensive people.',
-    archetype: '',
+    archetype: 'Warrior',
   },
   {
     prompt: 'I like to transform situations.',
-    archetype: '',
+    archetype: 'Magician',
   },
   {
     prompt: 'The key to success in all aspects of life is discipline.',
-    archetype: '',
+    archetype: 'Warrior',
   },
   {
     prompt: 'Inspiration comes easily to me.',
-    archetype: '',
+    archetype: 'Creator',
   },
   {
     prompt: 'I do not live up to my expectations for myself.',
-    archetype: '',
+    archetype: 'Destroyer',
   },
   {
     prompt: 'I have a sense that a better world awaits me somewhere.',
-    archetype: '',
+    archetype: 'Seeker',
   },
   {
     prompt: 'I assume that people I meet are trustworthy.',
-    archetype: '',
+    archetype: 'Innocent',
   },
   {
     prompt: 'I am experimenting with turning my dreams into realities.',
-    archetype: '',
+    archetype: 'Creator',
   },
   {
     prompt: 'I know my needs will be provided for.',
-    archetype: '',
+    archetype: 'Innocent',
   },
   {
     prompt: 'I feel like breaking something.',
-    archetype: '',
+    archetype: 'Destroyer',
   },
   {
     prompt: 'I try to manage situations with the good of all in mind.',
-    archetype: '',
+    archetype: 'Ruler',
   },
   {
     prompt: 'I have a hard time saying no.',
-    archetype: '',
+    archetype: 'Caregiver',
   },
   {
     prompt: 'I have a lot more great ideas than I have time to act on them.',
-    archetype: '',
+    archetype: 'Creator',
   },
   {
     prompt: 'I am looking for greener pastures.',
-    archetype: '',
+    archetype: 'Seeker',
   },
   {
     prompt: 'Important people in my life have let me down.',
-    archetype: '',
+    archetype: 'Orphan',
   },
   {
     prompt: 'The act of looking for something is as important to me as finding it.',
-    archetype: '',
+    archetype: 'Seeker',
   },
 ]
