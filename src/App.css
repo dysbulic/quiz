@@ -6,6 +6,7 @@
   margin: 0 auto;
   /* container-type: normal; */
   width: 100%;
+  font-size: 150%;
 }
 
 a {
@@ -97,26 +98,29 @@ h1 {
   & ol {
     list-style: none;
 
-    & li {
-      &:nth-of-type(1):before {
-        content: '(1) ';
-      }
-
-      &:nth-of-type(3):before {
-        content: '(2) ';
-      }
-    }
-
     & .or {
-      margin-inline-start: 2rem;
+      margin-inline-start: 5rem;
     }
+  }
+
+  & label {
+    display: block;
+    text-align: justify;
+    text-indent: -2.5rem;
+    margin-inline-start: 3rem;
+  }
+
+  & input {
+    transform: scale(1.5);
+    margin-inline-end: 0.75rem;
   }
 
   & button {
     border: 2px solid currentColor;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    margin-inline-start: calc(100% - 5rem);
+    margin-inline-start: 60%;
+    font-size: 15pt;
 
     &:hover {
       color: black;
@@ -136,6 +140,11 @@ h1 {
       padding-inline: 1rem;
     }
   }
+
+  @media (width <= 450px) {
+    grid-template-columns: 2fr repeat(2, max-content);
+    padding-inline: 0.5rem;
+  }
 }
 
 #legend {
@@ -145,4 +154,8 @@ h1 {
   padding: 0.5rem;
   margin-block-start: 2rem;
   text-align: justify;
+
+  @media (width <= 600px) {
+    max-width: 100%;
+  }
 }

@@ -34,12 +34,12 @@ export const Prompt = (
               <React.Fragment key={idx}>
                 <li>
                   <label>
+                    ({idx + 1}){' '}
                     <input
-                      autoFocus={idx === 0}
                       type="radio"
                       name={`options-${index}`}
-                      defaultChecked={chosen === idx}
-                      onClick={() => {
+                      checked={chosen === idx}
+                      onChange={() => {
                         choose({
                           at: index,
                           choice: idx as Choice,
@@ -47,8 +47,8 @@ export const Prompt = (
                       }}
                     />
                     {option}
+                    {idx === options.length - 1 && '?'}
                   </label>
-                  {idx === options.length - 1 && '?'}
                 </li>
                 {idx < options.length - 1 && (
                   <li className="or">or</li>

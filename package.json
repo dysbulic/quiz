@@ -2,7 +2,7 @@
   "name": "mbti",
   "description": "MBTI Inventory",
   "private": true,
-  "version": "0.0.5",
+  "version": "0.2.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,11 +10,10 @@
     "build:unsafe": "vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "car": "cd dist/ && ipfs-car pack --output ../site.car ./",
-    "upload": "w3 put-car site.car"
+    "car": "npm run build && cd dist/ && npx ipfs-car pack --output ../site.car ./",
+    "upload": "w3 up --car site.car"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.24.6",
     "fast-mersenne-twister": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,9 +28,11 @@
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "@vitejs/plugin-react": "^4.0.1",
+    "@web3-storage/w3cli": "^4.0.0",
     "eslint": "^8.44.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
+    "ipfs-car": "^1.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-plugin-json5": "^1.0.7"

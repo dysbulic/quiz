@@ -145,9 +145,11 @@ export function App() {
     )
     return question
   }
-  const [currentIndex] = useState(Math.min(
-    choices.length - 1, qIndex ?? progress?.length ?? 0
-  ))
+  const [currentIndex] = useState(
+    Math.min(
+      choices.length - 1, qIndex ?? progress?.length ?? 0
+    )
+  )
   const link = useCallback((
     index: number | string,
     { progress: argProgress }: LinkParams = {}
@@ -187,11 +189,17 @@ export function App() {
           )
         }
       } else if(evt.key === 'ArrowRight') {
-        if(currentIndex < choices.length) {
-          window.location.href = (
-            link(currentIndex + 2)
-          )
-        }
+        window.location.href = (
+          link(currentIndex + 2)
+        )
+      } else if(evt.ctrlKey && evt.key === 'ArrowUp') {
+        choose({ at: currentIndex, choice: 0 })
+      } else if(evt.ctrlKey && evt.key === 'ArrowDown') {
+        choose({ at: currentIndex, choice: 1 })
+      } else if(evt.key === 'Enter') {
+        window.location.href = (
+          link(currentIndex + 2, { progress })
+        )
       }
     }
     document.addEventListener('keyup', key)
@@ -203,6 +211,16 @@ export function App() {
   return (
     <main>
       <h1>MBTI Inventory</h1>
+
+      {qIndexString === 'score' || currentIndex >= choices.length ? (
+        <Score {...{ choices, progress }}/>
+      ) : (
+        <Prompt
+          index={currentIndex}
+          chosen={progress?.[currentIndex]}
+          {...{ choices, link, choose }}
+        />
+      )}
 
       <ol id="progress">
         {choices.map(
@@ -232,7 +250,10 @@ export function App() {
                   renderToStaticMarkup(q)
                 }
               >
-                <a href={`${link(idx + 1)}`}>
+                <a
+                  href={link(idx + 1)}
+                  autoFocus={idx === currentIndex}
+                >
                   {idx + 1}
                 </a>
               </li>
@@ -241,22 +262,14 @@ export function App() {
         )}
       </ol>
 
-      {qIndexString === 'score' ? (
-        <Score {...{ choices, progress }}/>
-      ) : (
-        <Prompt
-          index={currentIndex}
-          chosen={progress?.[currentIndex]}
-          {...{ choices, link, choose }}
-        />
+      {qIndexString !== 'score' && currentIndex < choices.length && (
+        <section id="legend">
+          <p>Click on any of the numbered boxes to select that question.</p>
+          <p>Use the <code>←</code> & <code>→</code> keys to navigate between questions.</p>
+          <p>Use the <code>1</code> and <code>2</code> keys to select the first or second option.</p>
+          <p>Use <code>control</code> plus the <code>↑</code> and <code>↓</code> keys to select an option, then <code>enter</code> to progress.</p>
+        </section>
       )}
-
-      <section id="legend">
-        <p>Click on any of the numbered boxes to select that question.</p>
-        <p>Use the left and right arrow keys to navigate between questions.</p>
-        <p>Use the 1 and 2 keys to select the first or second option.</p>
-        <p>Use the up and down keys to select an option, and enter to progress.</p>
-      </section>
 
       <Tooltip id="tooltip"/>
     </main>
