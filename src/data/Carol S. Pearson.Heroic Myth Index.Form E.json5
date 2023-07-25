@@ -1,0 +1,290 @@
+[
+  {
+    prompt: 'I collect information without making judgments.',
+    archetype: 'Sage',
+  },
+  {
+    prompt: 'I feel disoriented by so much change in my life.',
+    archetype: '',
+  },
+  {
+    prompt: 'The process of my own self-healing enables me to help heal others.',
+    archetype: '',
+  },
+  {
+    prompt: 'I have let others down.',
+    archetype: '',
+  },
+  {
+    prompt: 'I feel safe.',
+    archetype: '',
+  },
+  {
+    prompt: 'I put fear aside and do what needs to be done.',
+    archetype: '',
+  },
+  {
+    prompt: 'I put the needs of others before my own.',
+    archetype: '',
+  },
+  {
+    prompt: 'I try to be authentic wherever I am.',
+    archetype: '',
+  },
+  {
+    prompt: 'When life gets dull, I like to shake things up.',
+    archetype: '',
+  },
+  {
+    prompt: 'I find satisfaction caring for others.',
+    archetype: '',
+  },
+  {
+    prompt: 'Others see me as fun.',
+    archetype: '',
+  },
+  {
+    prompt: 'I feel sexy.',
+    archetype: '',
+  },
+  {
+    prompt: 'I believe that people don’t really mean to hurt each other.',
+    archetype: '',
+  },
+  {
+    prompt: 'As a child, I was neglected or victimized.',
+    archetype: '',
+  },
+  {
+    prompt: 'Giving makes me happier than receiving.',
+    archetype: '',
+  },
+  {
+    prompt: 'I agree with the statement, “It is better to have loved and lost than never to have loved at all.”',
+    archetype: '',
+  },
+  {
+    prompt: 'I embrace life fully.',
+    archetype: '',
+  },
+  {
+    prompt: 'I keep a sense of perspective by taking a long-range view.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am in the process of creating my own life.',
+    archetype: '',
+  },
+  {
+    prompt: 'I believe there are many good ways to look at the same thing.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am no longer the person I thought I was.',
+    archetype: '',
+  },
+  {
+    prompt: 'Life is one heartache after another.',
+    archetype: '',
+  },
+  {
+    prompt: 'Spiritual help accounts for my effectiveness.',
+    archetype: '',
+  },
+  {
+    prompt: 'I find it easier to do for others than to do for myself.',
+    archetype: '',
+  },
+  {
+    prompt: 'I find fulfillment through relationships.',
+    archetype: '',
+  },
+  {
+    prompt: 'People look to me for direction.',
+    archetype: '',
+  },
+  {
+    prompt: 'I fear those in authority.',
+    archetype: '',
+  },
+  {
+    prompt: 'I don’t take rules too seriously.',
+    archetype: '',
+  },
+  {
+    prompt: 'I like to help people connect with one another.',
+    archetype: '',
+  },
+  {
+    prompt: 'I feel abandoned.',
+    archetype: '',
+  },
+  {
+    prompt: 'I have times of high accomplishment that feel effortless to me.',
+    archetype: '',
+  },
+  {
+    prompt: 'I have leadership qualities.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am searching for ways to improve myself.',
+    archetype: '',
+  },
+  {
+    prompt: 'I can count on others to take care of me.',
+    archetype: '',
+  },
+  {
+    prompt: 'I prefer to be in charge.',
+    archetype: '',
+  },
+  {
+    prompt: 'I try to find truths behind illusions.',
+    archetype: '',
+  },
+  {
+    prompt: 'Changing my inner thoughts changes my outer life.',
+    archetype: '',
+  },
+  {
+    prompt: 'I develop resources, human or natural.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am willing to take personal risks in order to defend my beliefs.',
+    archetype: '',
+  },
+  {
+    prompt: 'I can’t sit back and let a wrong go by without challenging it.',
+    archetype: '',
+  },
+  {
+    prompt: 'I strive for objectivity.',
+    archetype: '',
+  },
+  {
+    prompt: 'My presence is often a catalyst for change.',
+    archetype: '',
+  },
+  {
+    prompt: 'I enjoy making people laugh.',
+    archetype: '',
+  },
+  {
+    prompt: 'I use discipline to achieve goals.',
+    archetype: '',
+  },
+  {
+    prompt: 'I feel loving toward people in general.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am good at matching people’s abilities with tasks to be done.',
+    archetype: '',
+  },
+  {
+    prompt: 'It is essential for me to maintain my independence.',
+    archetype: '',
+  },
+  {
+    prompt: 'I believe everyone and everything in the world are interconnected.',
+    archetype: '',
+  },
+  {
+    prompt: 'The world is a safe place.',
+    archetype: '',
+  },
+  {
+    prompt: 'People I’ve trusted have abandoned me.',
+    archetype: '',
+  },
+  {
+    prompt: 'I feel restless.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am letting go of things that do not fit for me anymore.',
+    archetype: '',
+  },
+  {
+    prompt: 'I like to “lighten up” people who are too serious.',
+    archetype: '',
+  },
+  {
+    prompt: 'A little chaos is good for the soul.',
+    archetype: '',
+  },
+  {
+    prompt: 'Sacrificing to help others has made me a better person.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am calm.',
+    archetype: '',
+  },
+  {
+    prompt: 'I stand up to offensive people.',
+    archetype: '',
+  },
+  {
+    prompt: 'I like to transform situations.',
+    archetype: '',
+  },
+  {
+    prompt: 'The key to success in all aspects of life is discipline.',
+    archetype: '',
+  },
+  {
+    prompt: 'Inspiration comes easily to me.',
+    archetype: '',
+  },
+  {
+    prompt: 'I do not live up to my expectations for myself.',
+    archetype: '',
+  },
+  {
+    prompt: 'I have a sense that a better world awaits me somewhere.',
+    archetype: '',
+  },
+  {
+    prompt: 'I assume that people I meet are trustworthy.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am experimenting with turning my dreams into realities.',
+    archetype: '',
+  },
+  {
+    prompt: 'I know my needs will be provided for.',
+    archetype: '',
+  },
+  {
+    prompt: 'I feel like breaking something.',
+    archetype: '',
+  },
+  {
+    prompt: 'I try to manage situations with the good of all in mind.',
+    archetype: '',
+  },
+  {
+    prompt: 'I have a hard time saying no.',
+    archetype: '',
+  },
+  {
+    prompt: 'I have a lot more great ideas than I have time to act on them.',
+    archetype: '',
+  },
+  {
+    prompt: 'I am looking for greener pastures.',
+    archetype: '',
+  },
+  {
+    prompt: 'Important people in my life have let me down.',
+    archetype: '',
+  },
+  {
+    prompt: 'The act of looking for something is as important to me as finding it.',
+    archetype: '',
+  },
+]
